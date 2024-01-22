@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import './styles.scss'
-import { redirect } from 'react-router-dom';
+import { Navigate, redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 
 export default function Login(){
 
@@ -20,7 +22,8 @@ export default function Login(){
                     console.log(data);
                     if(data.access_token){
                         localStorage.setItem("accessToken",data.access_token);
-                        redirect('/home');
+                        Navigate('/home');
+                        // props.setLogged(!props.logged);
                     }
                 })
               })();
@@ -44,4 +47,8 @@ export default function Login(){
             </div>
         </div>
     );
+}
+
+Login.propTypes={
+    logged: PropTypes.bool,
 }
