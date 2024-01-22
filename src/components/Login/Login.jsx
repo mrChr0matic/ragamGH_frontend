@@ -12,7 +12,7 @@ export default function Login(){
 
         if(codeParams && localStorage.getItem("accessToken")===null){
             (async () => {
-                await fetch(`http://localhost:4000/getAccessToken/?code=${codeParams}`,{
+                await fetch(`https://ragamgh-backend.onrender.com/getAccessToken/?code=${codeParams}`,{
                     method:"GET"
                 }).then((res)=>{
                     return res.json();

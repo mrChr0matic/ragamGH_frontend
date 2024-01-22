@@ -19,7 +19,7 @@ export default function Home(){
 
     useEffect(()=>{
         const fetchData = async () => {
-            const userData =  await fetch("http://localhost:4000/getUserData",{
+            const userData =  await fetch("https://ragamgh-backend.onrender.com/getUserData",{
                 method:"GET",
                 headers:{
                     "Authorization": "Bearer " + localStorage.getItem("accessToken")
@@ -42,7 +42,7 @@ export default function Home(){
 
     const searchItem=()=>{
         const getItemGH=async()=>{
-            const itemData=await fetch ("http://localhost:4000/getParticularUser",{
+            const itemData=await fetch ("https://ragamgh-backend.onrender.com/getParticularUser",{
                 method:"GET",
                 headers:{
                     "Authorization": "Bearer " + localStorage.getItem("accessToken"),
@@ -53,7 +53,7 @@ export default function Home(){
             console.log(user);
             setUsers([user]);
 
-            const getRepos=await fetch("http://localhost:4000/getRepositories",{
+            const getRepos=await fetch("https://ragamgh-backend.onrender.com/getRepositories",{
                 method:"GET",
                 headers:{
                     "Authorization": "Bearer " + localStorage.getItem("accessToken"),
