@@ -14,7 +14,7 @@ function Profile(props) {
         <div className='profile'>
             <div className='user'>
                 <div className='name'>
-                    <h1 className='name'>mrChr0matic</h1>
+                    <h1 className='name'>{props.name}</h1>
                     <img src={props.image} alt="pfp" />
                 </div>
                 <i onClick={() => { props.setClick(!props.click) }} className="fa-solid fa-x"></i>
@@ -34,10 +34,11 @@ function Profile(props) {
 }
 
 Profile.propTypes = {
-  setClick: PropTypes.func.isRequired,
-  click: PropTypes.bool.isRequired,
-  image: PropTypes.string,
-  bio: PropTypes.string
+    name: PropTypes.string,
+    setClick: PropTypes.func.isRequired,
+    click: PropTypes.bool.isRequired,
+    image: PropTypes.string,
+    bio: PropTypes.string
 };
 
 export default Profile;

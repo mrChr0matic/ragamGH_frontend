@@ -127,7 +127,7 @@ export default function Home(){
                 </div>
             </div>
             <AnimatePresence>
-                {click && <Profile click={click} setClick={setClick} image={userData.avatar_url} bio={userData.bio}/>}
+                {click && <Profile click={click} setClick={setClick} name={userData.login} image={userData.avatar_url} bio={userData.bio}/>}
             </AnimatePresence>
         </div>
     )
