@@ -1,0 +1,186 @@
+.home{
+    min-height: 100vh;
+    background-color: #24292e;
+    color: #fff;
+    .pfp{
+        display: flex;
+        justify-content: space-between;
+        padding:20px ;
+        border-bottom: 1px #c5c6d0 solid;
+        img{
+            border-radius: 50px;
+            width: 2rem;
+        }
+        i{
+            font-size: 2rem ;
+        }
+    }
+    .home-body{
+        height: 89vh;
+        display: flex;
+
+        .repos{
+            width: 30%;
+            text-align: center;
+            border-right: 1px #c5c6d0 solid;
+            position: relative;
+            overflow-y: auto;
+
+            .repos-heading{
+                display: flex;
+                justify-content: space-around;
+                margin: 50px 0 45px 0;
+            }
+
+            .repos-list{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                list-style: none;
+                gap: 4rem;
+                padding: 0;
+                margin: 0; 
+                li{
+                    border-bottom: 1px solid rgba(169, 169, 169, 0.5);
+                    width: 70%;
+                    line-height: 1rem;
+                    padding-bottom: 25px    ;
+                }
+            }
+
+            .repos-text{
+                border: 1px #c5c6d0 dotted;
+                padding: 7%;
+                border-radius: 25px;
+                width: 80%;
+                display: block;
+                margin: 55px auto 55px auto;
+            }
+        }
+        .repos {
+            -ms-overflow-style: none;  
+            scrollbar-width: none;  
+        }
+        .repos::-webkit-scrollbar { 
+            display: none;  
+        }
+
+        .search {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70%;
+            position: relative;
+            flex-direction: column;
+            overflow-y: auto;
+          
+            .item-tray{
+                width: 100%;
+                position: absolute;
+                top: 100px;
+                .items {
+                  display: flex;
+                  align-items: center;
+                  flex-direction: column;
+                  gap: 1em;
+                  width: 100%;
+                }
+            }
+          
+            .search-bar {
+              width: 100%;
+              display: flex;
+              justify-content: space-evenly;
+              position: absolute; /* Use sticky positioning */
+              top: 35px;
+              z-index: 2;
+          
+              .bar {
+                margin-top: 2px;
+                width: 70%;
+                height: 35px;
+                outline: none;
+                background-color: #24292e;
+                transition: 0.2s;
+                padding-left: 20px;
+                border-bottom: 0.5px solid #c5c6d0;
+                color:#fff;
+              }
+          
+              .bar:focus {
+                border-bottom: 0;
+                border-radius: 10px;
+                border: 3px solid #4078c0;
+              }
+          
+              .bar:active {
+                border: none;
+              }
+            }
+          }
+          
+
+        .search{
+            -ms-overflow-style: none;  
+            scrollbar-width: none;  
+        }
+        .search::-webkit-scrollbar { 
+            display: none;  
+        }
+
+        .repo{
+            
+        }
+    }
+}
+
+.button-3 {
+    appearance: none;
+    background-color: #2ea44f;
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &:focus:not(:focus-visible):not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+    }
+
+    &:hover {
+    background-color: #2c974b;
+    }
+
+    &:focus {
+    box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
+    outline: none;
+    }
+
+    &:disabled {
+    background-color: #94d3a2;
+    border-color: rgba(27, 31, 35, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    cursor: default;
+    }
+
+    &:active {
+    background-color: #298e46;
+    box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+    }
+}

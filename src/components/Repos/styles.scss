@@ -1,0 +1,46 @@
+.repository{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    border-radius: 15px;
+    background-color: #1D2B53;
+    padding: 1%;
+    gap: 1.2rem;
+    .repo-stats{
+        display: flex;
+        justify-content: space-between;
+
+        .owner{
+            display: flex;
+            gap: 1rem;
+
+            h1{
+                font-size: 1.5rem;
+            }
+            
+            h2{
+                font-size: 1rem;
+            }
+            
+            a{
+                color: #fff;
+                text-decoration: none;
+            }
+
+            a:hover{
+                text-decoration: underline;
+            }
+            
+            .img{
+                width: 40px;
+            }
+        }
+    }
+    .desc{
+        hr{
+            height: 1px;
+            background-color: white;
+            margin-bottom: 1rem;
+        }
+    }
+}
