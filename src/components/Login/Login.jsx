@@ -1,16 +1,15 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './styles.scss'
-import { Navigate, redirect } from 'react-router-dom';
-import PropTypes from 'prop-types';
-
+import { Link } from 'react-router-dom';
 
 export default function Login(){
+
+    const [logged,setLogged]=useState(false);
 
     useEffect(()=>{
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const codeParams = urlParams.get("code");
-        console.log(codeParams+"iscode");
 
         if(codeParams && localStorage.getItem("accessToken")===null){
             (async () => {
@@ -22,8 +21,8 @@ export default function Login(){
                     console.log(data);
                     if(data.access_token){
                         localStorage.setItem("accessToken",data.access_token);
-                        Navigate('/home');
-                        // props.setLogged(!props.logged);
+                        setLogged(true);
+                        console.log(logged);
                     }
                 })
               })();
@@ -36,9 +35,11 @@ export default function Login(){
 
     const ghLogout=()=>{
         localStorage.removeItem("accessToken");
+        setLogged(false);
     }
     return(
         <div className='login'>
+            {logged && <Link style={{ position: 'absolute',  width:'100%'}} to='/home'><button className='home-button'>Home</button></Link>}
             <h1 className='heading'>GH Ragam</h1>
             <div className='box'>
                 <h1>Welcome! This website was created as part of the Ragam Tech Team inductions</h1>
@@ -47,8 +48,4 @@ export default function Login(){
             </div>
         </div>
     );
-}
-
-Login.propTypes={
-    logged: PropTypes.bool,
 }
