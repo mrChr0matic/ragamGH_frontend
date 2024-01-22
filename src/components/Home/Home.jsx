@@ -116,7 +116,7 @@ export default function Home(){
                                 />
                             ))}
                         </div>
-                        <div className='items'>
+                        <div className='items user-items'>
                             {users.map((user,index) => (
                                 user.login ?
                                 <Users key={index} avatar_url={user.avatar_url} login={user.login} html_url={user.html_url} repos_url={user.repos_url}/>

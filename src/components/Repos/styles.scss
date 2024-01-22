@@ -2,10 +2,11 @@
     display: flex;
     flex-direction: column;
     width: 80%;
-    border-radius: 15px;
-    background-color: #1D2B53;
     padding: 1%;
     gap: 1.2rem;
+    background: #424769 ;
+    border-radius: 15px;
+    
     .repo-stats{
         display: flex;
         justify-content: space-between;

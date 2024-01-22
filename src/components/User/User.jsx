@@ -38,12 +38,13 @@ export default function Users(props){
                         whileInView={{opacity:1, scale:1}}
                         exit={{opacity:0.5,scale:0}}
                     >
-                        <p>X</p>
-                        <ul>
-                            {repos.map((repo,index)=>(
-                                <li key={index}><a href={repo.html_url}>{repo.name}</a></li>
-                            ))}
-                        </ul>
+                        <div className='repo-container' onClick = {(e) => e.stopPropagation()}>
+                            <ul>
+                                {repos.map((repo,index)=>(
+                                    <li key={index}><a href={repo.html_url}>{repo.name}</a></li>
+                                ))}
+                            </ul>
+                        </div>
                     </motion.div>
                 }
             </AnimatePresence>
